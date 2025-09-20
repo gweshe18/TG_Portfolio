@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MediView — DICOM De-Identification Engine (8k X-rays) | Case Study</title>
-  <meta name="description" content="An exposé of a custom metadata-engineering engine that anonymises an 8,000-image DICOM X-ray corpus at the hex-tag level—evolved from a single-image tool to a batch machine with audit trails."/>
-  <link rel="stylesheet" href="../style.css"/>
+  <title>Tapiwa’s Log | Blog</title>
+  <meta name="description" content="Tapiwa’s Log — essays, build logs, poems, ideas, music, art, science, faith, and links to videos."/>
+  <!-- Correct path to CSS in /assets/css -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
-
 <body>
+  <!-- Dynamic background canvas (required by dynamic-bg.js) -->
+  <div id="bg-canvas" aria-hidden="true"></div>
 
   <!-- NAV -->
   <header class="navbar" role="banner">
@@ -50,7 +52,7 @@
       </div>
     </section>
 
-    <!-- POSTS GRID (3 live stories to start) -->
+    <!-- POSTS GRID -->
     <section class="section" aria-label="Posts">
       <div class="container">
         <div class="grid grid-3" id="postGrid">
@@ -104,11 +106,9 @@
             </div>
           </article>
 
-
-          <!-- Coming soon card -->
+          <!-- Coming soon -->
           <article class="coming-soon post" data-cat="essay poetry think music art science faith video">
             <h3>New content on the way.</h3>
-            
             <div style="margin-top:12px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
               <a class="btn btn--primary" href="mailto:gweshe21@gmail.com">Get notified</a>
               <a class="btn btn--ghost" href="index.html#contact">Work with me</a>
@@ -127,20 +127,17 @@
     </div>
   </footer>
 
-  <!-- Dynamic background + tiny filter logic -->
-  <script src="dynamic-bg.js" defer></script>
+  <!-- Correct path to JS in /assets/js -->
+  <script src="assets/js/dynamic-bg.js" defer></script>
   <script>
     // Simple client-side filter (no framework)
     document.getElementById('filters').addEventListener('click', (e) => {
       const chip = e.target.closest('.chip'); if(!chip) return;
       const filter = chip.dataset.filter;
       document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c===chip));
-
-      const posts = document.querySelectorAll('#postGrid .post');
-      posts.forEach(p => {
+      document.querySelectorAll('#postGrid .post').forEach(p => {
         if (filter === 'all') { p.style.display = ''; return; }
-        const match = (p.dataset.cat || '').split(' ').includes(filter);
-        p.style.display = match ? '' : 'none';
+        p.style.display = ((p.dataset.cat || '').split(' ').includes(filter)) ? '' : 'none';
       });
     });
   </script>
