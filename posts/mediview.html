@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediView — DICOM De-Identification Engine | Case Study</title>
+  <meta name="description" content="A metadata-engineering engine for anonymising DICOM at the hex-tag level—evolved from a single-image tool to a batch machine."/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar" role="banner">
+    <div class="container row">
+      <div class="brand">Tapiwa Gweshe</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#variance">Variance</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#cases">Case Studies</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="title">
+      <div class="container">
+        <span class="tag"><span class="dot" aria-hidden="true"></span> Case Study • Healthcare • DICOM • Metadata Engineering</span>
+        <h1 id="title">MediView — DICOM De-Identification Engine</h1>
+        <p class="section-lead">
+          A precise, rules-driven engine that removes identity from medical imagery at the <em>hex-tag</em> level—starting with one file,
+          then scaling to hundreds in parallel.
+        </p>
+        <div class="badges" style="margin-top:12px">
+          <span class="badge">Python</span>
+          <span class="badge">pydicom</span>
+          <span class="badge">Batch processing</span>
+          <span class="badge">Compliance-oriented</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="section">
+      <div class="container grid grid-2">
+        <article class="card">
+          <h3>Why build an engine?</h3>
+          <p>
+            In clinical workflows, identity hides in metadata and sometimes pixels. We needed a dependable way to locate DICOM fields by their
+            hexadecimal tags, apply a clear rule set (with exceptions), and output safe artifacts for research, model building, and QA—without
+            breaking file integrity.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Design stance</h3>
+          <p>
+            Think factory line: intake (DICOMs) → tag scan → rule pass → exceptions → QC/diff → clean output. The core is small and composable,
+            so we could start with a single frame and scale to full batches.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SYSTEM DIAGRAM (no UI leak) -->
+    <section class="section" aria-labelledby="diagram">
+      <div class="container">
+        <h2 id="diagram">Engine at a glance <span class="bar"></span></h2>
+        <figure class="figure" style="margin-top:12px;">
+          <svg viewBox="0 0 960 160" width="100%" role="img" aria-label="MediView de-identification pipeline">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop stop-color="#5FA7A2" offset="0"/><stop stop-color="#D7C5A6" offset="1"/>
+              </linearGradient>
+            </defs>
+            <g font-family="ui-sans-serif,system-ui" font-size="14" fill="#111827">
+              <rect x="20"  y="30" width="150" height="80" rx="12" fill="white" stroke="#ECEAE4"/>
+              <text x="95"  y="65" text-anchor="middle">Intake</text>
+              <text x="95"  y="85" text-anchor="middle" fill="#5B6473">DICOM dir</text>
+
+              <rect x="200" y="30" width="160" height="80" rx="12" fill="white" stroke="#ECEAE4"/>
+              <text x="280" y="65" text-anchor="middle">Tag Scan</text>
+              <text x="280" y="85" text-anchor="middle" fill="#5B6473">(0010,0010) etc.</text>
+
+              <rect x="380" y="30" width="170" height="80" rx="12" fill="white" stroke="#ECEAE4"/>
+              <text x="465" y="65" text-anchor="middle">Rule Pass</text>
+              <text x="465" y="85" text-anchor="middle" fill="#5B6473">blank • clamp • drop</text>
+
+              <rect x="570" y="30" width="150" height="80" rx="12" fill="white" stroke="#ECEAE4"/>
+              <text x="645" y="65" text-anchor="middle">Exceptions</text>
+              <text x="645" y="85" text-anchor="middle" fill="#5B6473">config</text>
+
+              <rect x="740" y="30" width="180" height="80" rx="12" fill="white" stroke="#ECEAE4"/>
+              <text x="830" y="65" text-anchor="middle">QC & Diff</text>
+              <text x="830" y="85" text-anchor="middle" fill="#5B6473">logs • before/after</text>
+
+              <rect x="20" y="120" width="900" height="6" fill="url(#g1)"/>
+              <polygon points="920,123 940,123 928,133" fill="url(#g1)"/>
+            </g>
+          </svg>
+          <figcaption class="caption">Factory-line metaphor: each file receives the same precise pass, with exceptions and audit.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" aria-labelledby="engine">
+      <div class="container">
+        <h2 id="engine">Inside the engine <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Locate by hex tag</h3>
+            <p>
+              Address DICOM fields by tag—e.g., <code>(0010,0010)</code> PatientName, <code>(0010,0020)</code> PatientID,
+              <code>(0010,0040)</code> Sex, <code>(0010,1010)</code> Age, <code>(0010,0030)</code> BirthDate,
+              <code>(0008,0050)</code> AccessionNumber, <code>(0008,0020)</code> StudyDate, etc.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Rule book (with exceptions)</h3>
+            <p>
+              Core rules: blank direct identifiers; standardise dates/times to safe placeholders; drop non-essential institutional fields;
+              optional CSV pseudonyms for consistent IDs. Exceptions preserve technical fields & transfer syntax.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Integrity & endianness</h3>
+            <p>
+              Respect endianness and transfer syntax; decompress before edits when necessary. Outputs remain valid for viewers and pipelines.
+            </p>
+          </article>
+        </div>
+
+        <!-- Developer notes (short, safe excerpt) -->
+        <details class="card" style="margin-top:16px;">
+          <summary style="cursor:pointer; font-weight:800;">Developer notes (safe excerpt)</summary>
+          <pre style="white-space:pre-wrap; font-size:13px; line-height:1.55; color:var(--ink); background:var(--surface); padding:14px; border:1px solid var(--line); border-radius:var(--radius); overflow:auto;"><code># Hex-tag map (excerpt)
+T = lambda g,e: (g,e)
+TAGS = {
+  T(0x0010,0x0010): "PatientName",
+  T(0x0010,0x0020): "PatientID",
+  T(0x0010,0x0040): "PatientSex",
+  T(0x0010,0x1010): "PatientAge",
+  T(0x0010,0x0030): "PatientBirthDate",
+  T(0x0008,0x0020): "StudyDate",
+  T(0x0008,0x0030): "StudyTime",
+  T(0x0008,0x0080): "InstitutionName",
+}
+
+def rule_pass(ds):
+  # blank
+  for g,e in [(0x0010,0x0010),(0x0010,0x0020),(0x0010,0x0040),(0x0010,0x1010)]:
+      set_blank(ds,(g,e))
+  # clamp
+  clamp_date(ds,(0x0010,0x0030)); clamp_date(ds,(0x0008,0x0020))
+  clamp_time(ds,(0x0008,0x0030))
+  # drop
+  drop_if_present(ds,(0x0008,0x0080))
+  # optional pseudonym via CSV → PatientID, filename
+  return ds</code></pre>
+          <p class="caption">Deterministic, hex-tag aware pass; exceptions and pseudonym mapping are config-driven.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- EVOLUTION -->
+    <section class="section" aria-labelledby="evolution">
+      <div class="container">
+        <h2 id="evolution">From single image to batch machine <span class="bar"></span></h2>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>V1 — Solo operator</h3>
+            <p>
+              One DICOM at a time: inspect metadata, apply the pass, save. Proved tag handling and surfaced edge cases (odd dates, missing tags, compressed syntaxes).
+            </p>
+          </article>
+          <article class="card">
+            <h3>V2 — Conveyor belt</h3>
+            <p>
+              A directory in, concurrent workers out. Each run yields clean saves, logs, and a before/after metadata diff for audit. CSV-driven renaming provides stable pseudonyms.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTPUTS & QC -->
+    <section class="section" aria-labelledby="qc">
+      <div class="container">
+        <h2 id="qc">Outputs & QC <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Clean DICOMs</h3>
+            <p>De-identified files with intact headers & encodings; safe for viewers and pipelines.</p>
+          </article>
+          <article class="card">
+            <h3>Diffs & logs</h3>
+            <p>Automatic comparison of original vs modified elements (by tag) with structured logs per run.</p>
+          </article>
+          <article class="card">
+            <h3>CSV pseudonyms</h3>
+            <p>Optional mapping for filenames → de-identified IDs to enable longitudinal linking without identity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA (no screenshots) -->
+    <section class="section" aria-labelledby="cta">
+      <div class="container">
+        <h2 id="cta">See it in action <span class="bar"></span></h2>
+        <p class="section-lead">Live demo with a redacted UI and synthetic DICOMs. No PHI, full engine.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px">
+          <a class="btn btn--primary" href="mailto:gweshe21@gmail.com">Request demo</a>
+          <a class="btn btn--ghost" href="../blog.html">Back to Tapiwa’s Log</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+      <div>© 2025 Tapiwa Gweshe. All rights reserved.</div>
+      <div style="color:var(--muted)">I work in data. Christ works in me.</div>
+    </div>
+  </footer>
+
+  <!-- Shared animated background -->
+  <script src="../dynamic-bg.js" defer></script>
+</body>
+</html>
