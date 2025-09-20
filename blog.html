@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tapiwa’s Log | Blog</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="description" content="Tapiwa’s Log — essays, build logs, poems, ideas, music, art, science, faith, and links to videos."/>
+  <title>MediView — DICOM De-Identification Engine (8k X-rays) | Case Study</title>
+  <meta name="description" content="An exposé of a custom metadata-engineering engine that anonymises an 8,000-image DICOM X-ray corpus at the hex-tag level—evolved from a single-image tool to a batch machine with audit trails."/>
+  <link rel="stylesheet" href="../style.css"/>
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -86,18 +87,23 @@
 
           <!-- MediView -->
           <article class="card post" data-cat="case-study">
-            <h3>MediView — Imaging Toolkit</h3>
-            <p>Streamlined medical image review with clean interfaces and automated annotation helpers.</p>
+            <h3>MediView — DICOM De-ID Engine</h3>
+            <p>
+              An exposé of a custom, hex-tag–aware engine I built to anonymise
+              an 8,000-image X-ray corpus—evolving from a single-file utility
+              into a batch pipeline with audit logs and pseudonym mapping.
+            </p>
             <div class="post-meta">
               <span class="badge">Python</span>
-              <span class="badge">OpenCV</span>
-              <span class="badge">Healthcare</span>
+              <span class="badge">pydicom</span>
+              <span class="badge">DICOM</span>
               <time datetime="2024-10-01">Oct 2024</time>
             </div>
             <div class="read">
               <a class="btn btn--ghost" href="posts/mediview.html">Read case study</a>
             </div>
           </article>
+
 
           <!-- Coming soon card -->
           <article class="coming-soon post" data-cat="essay poetry think music art science faith video">

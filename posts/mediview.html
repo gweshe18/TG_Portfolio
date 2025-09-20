@@ -28,32 +28,39 @@
   <main id="content">
     <!-- HERO -->
     <section class="hero" aria-labelledby="title">
-      <div class="container">
+    <div class="container">
         <span class="tag"><span class="dot" aria-hidden="true"></span> Case Study • Healthcare • DICOM • Metadata Engineering</span>
         <h1 id="title">MediView — DICOM De-Identification Engine</h1>
         <p class="section-lead">
-          A precise, rules-driven engine that removes identity from medical imagery at the <em>hex-tag</em> level—starting with one file,
-          then scaling to hundreds in parallel.
+        A precise, rules-driven engine I built to strip identity from an
+        <strong>8,000-image X-ray corpus</strong> at the <em>hex-tag</em> level—
+        starting as a single-image utility and maturing into a concurrent
+        batch pipeline with diffs, logs, and pseudonym mapping.
         </p>
         <div class="badges" style="margin-top:12px">
-          <span class="badge">Python</span>
-          <span class="badge">pydicom</span>
-          <span class="badge">Batch processing</span>
-          <span class="badge">Compliance-oriented</span>
+        <span class="badge">Python</span>
+        <span class="badge">pydicom</span>
+        <span class="badge">Batch processing</span>
+        <span class="badge">Compliance-oriented</span>
         </div>
-      </div>
+    </div>
     </section>
+
 
     <!-- CONTEXT -->
     <section class="section">
       <div class="container grid grid-2">
         <article class="card">
           <h3>Why build an engine?</h3>
-          <p>
-            In clinical workflows, identity hides in metadata and sometimes pixels. We needed a dependable way to locate DICOM fields by their
-            hexadecimal tags, apply a clear rule set (with exceptions), and output safe artifacts for research, model building, and QA—without
-            breaking file integrity.
-          </p>
+
+            <p>
+            In this project I received a real-world DICOM export: ~8k X-ray studies.
+            Identity hides in metadata (and sometimes pixels), so I designed a dependable
+            engine to target fields by their hexadecimal tags, apply a clear rule set
+            (with exceptions), and output safe artifacts for research and model building—
+            without breaking file integrity.
+            </p>
+
         </article>
         <article class="card">
           <h3>Design stance</h3>
