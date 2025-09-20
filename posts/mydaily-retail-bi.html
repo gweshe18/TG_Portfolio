@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyDaily — Retail BI | Case Study</title>
+  <meta name="description" content="End-to-end BI stack for a café: profitability heatmaps, demand trends, and daily ops insights."/>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar" role="banner">
+    <div class="container row">
+      <div class="brand">Tapiwa Gweshe</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="../index.html#work">Work</a>
+        <a href="../index.html#variance">Variance</a>
+        <a href="../index.html#services">Services</a>
+        <a href="../index.html#cases">Case Studies</a>
+        <a href="../index.html#stack">Stack</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="title">
+      <div class="container">
+        <span class="tag"><span class="dot" aria-hidden="true"></span> Case Study • Retail • Power BI</span>
+        <h1 id="title">MyDaily — Retail BI</h1>
+        <p class="section-lead">
+          End-to-end analytics for a local café in Klerksdorp: profitability heatmaps, demand trends, and daily ops insight.
+          <br/><small>Delivered Nov 2024</small>
+        </p>
+        <div class="badges" style="margin-top:12px">
+          <span class="badge">Power BI</span>
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Ops enablement</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section class="section">
+      <div class="container grid grid-2">
+        <article class="card">
+          <h3>Outcome</h3>
+          <p>
+            We built a lightweight data pipeline and an executive-friendly Power BI dashboard that surfaces
+            <em>when</em> sales peak, <em>what</em> sells, and <em>how</em> sales types trend—so the owner could plan staff,
+            tweak offerings, and track progress daily.
+          </p>
+          <div class="badges">
+            <span class="badge">peaks by hour/day</span>
+            <span class="badge">avg spend / tx</span>
+            <span class="badge">saletype mix</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Client Context</h3>
+          <p>
+            My Daily Coffee Stop operates at break-even with inconsistent performance across periods. New ownership wanted
+            clear visibility into sales dynamics to reposition as the go-to morning spot in Klerksdorp. :contentReference[oaicite:0]{index=0}
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTEXT + WHAT WE BUILT + RESULTS -->
+<section class="section" aria-labelledby="summary">
+  <div class="container">
+    <h2 id="summary">Context & Outcome <span class="bar"></span></h2>
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Context</h3>
+        <p>
+          This was a DataNova engagement during a transfer of ownership. The new owner wanted to understand the
+          <em>analytical value</em> of the business—when the café truly comes alive, which sale types carry the day,
+          and how seasonality shapes demand. I captured a clean snapshot of the sales window, built an interactive view,
+          and we explored the story together in a live session.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>What I built</h3>
+        <ul style="margin:0; padding-left:18px; color:var(--muted)">
+          <li>Lightweight pipeline → cleaned CSV with features (hour, day, month, saletype).</li>
+          <li>Power BI dashboard → revenue over time, KPIs, slicers (date &amp; saletype).</li>
+          <li>Plotly heatmap → profit concentration by hour×day for hotspot detection.</li>
+          <li>Guided walkthrough → we clicked around together and I narrated patterns and levers.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE PLOTLY HEATMAP -->
+<section class="section" aria-labelledby="viz">
+  <div class="container">
+    <h2 id="viz">Profitability Heatmap <span class="bar"></span></h2>
+    <article class="card" style="padding:22px">
+      <p class="section-lead" style="margin-bottom:14px">
+        Interactive view of profit concentration across hours and days. Hover to inspect, drag to zoom,
+        and scan for repeatable “hot” bands.
+      </p>
+      <div class="embed">
+        <iframe
+          src="../assets/plots/profitability_heatmap.html"
+          title="Profitability Heatmap — MyDaily"
+          loading="lazy"
+          referrerpolicy="no-referrer"
+        ></iframe>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:12px; flex-wrap:wrap">
+        <a class="btn btn--ghost" target="_blank" rel="noopener"
+           href="../assets/plots/profitability_heatmap.html">Open full screen</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- POWER BI DASHBOARD SNAPSHOT -->
+<section class="section" aria-labelledby="snapshot">
+  <div class="container">
+    <h2 id="snapshot">Operational Dashboard <span class="bar"></span></h2>
+    <figure class="figure">
+      <img src="../assets/img/MDCS_Dashboard.png" alt="MyDaily Coffee Stop Power BI dashboard showing sales over time, KPIs, and interactive slicers"/>
+      <figcaption class="caption">
+        Power BI snapshot used during the client session. Slicers let the owner filter by date and sale type,
+        while KPIs ground the conversation (total sales, average revenue, days open, earliest time).
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section" aria-labelledby="results">
+  <div class="container">
+    <h2 id="results">Results & Decisions Enabled <span class="bar"></span></h2>
+    <div class="grid grid-3">
+      <article class="card">
+        <h3>Hotspot awareness</h3>
+        <p>
+          Clear identification of peak hours and seasonal patterns. Owner now times promos and loyalty nudges
+          to ride natural demand instead of fighting it.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Sharper offers</h3>
+        <p>
+          Sale-type mix and average spend trends informed which bundles to push and when—turning quiet slots into tests
+          rather than unknowns.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Shared language</h3>
+        <p>
+          A single dashboard became the daily touchpoint: same numbers, same view, faster decisions—without extra ops burden.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+    <!-- PROBLEM -->
+    <section class="section" aria-labelledby="problem">
+      <div class="container">
+        <h2 id="problem">Problem <span class="bar"></span></h2>
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>What was missing</h3>
+            <p>
+              Despite daily transaction capture, there was no structured analysis—no view of peak times, spend per ticket,
+              or performance by <code>SALETYPE</code>. Decisions on pricing, staffing, and bundles were guesswork. :contentReference[oaicite:1]{index=1}
+            </p>
+          </article>
+          <article class="card">
+            <h3>Key questions</h3>
+            <ul style="margin:0; padding-left:18px; color:var(--muted)">
+              <li>When do traffic and revenue peak by hour and day?</li>
+              <li>How does average spend per transaction evolve?</li>
+              <li>How do <code>SALETYPE</code> categories (cash vs other) perform over time?</li>
+              <li>Where are the underperforming slots we can optimize?</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="section" aria-labelledby="approach">
+      <div class="container">
+        <h2 id="approach">Approach <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Phase 1 — Exploration</h3>
+            <p>
+              We profiled the raw CSV in Excel (ranges, zero/odd values, time coverage), documented questions, and drafted
+              a simple analysis plan to guide the build. :contentReference[oaicite:2]{index=2}
+            </p>
+            <div class="badges"><span class="badge">data familiarization</span><span class="badge">AMOUNT checks</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Phase 2 — Wrangling</h3>
+            <p>
+              Built a Pandas cleaning pipeline: normalize <code>SALETYPE</code>, remove zero/negative <code>AMOUNT</code>,
+              fix <code>DATE</code>/<code>TIME</code>, and create <code>Hour</code>, <code>DayOfWeek</code>, and combined
+              <code>DateTime</code> features. Output: <code>cleaned_mydaily_data.csv</code>. :contentReference[oaicite:3]{index=3}
+            </p>
+            <div class="badges"><span class="badge">pandas</span><span class="badge">feature engineering</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Phase 3 — BI & Story</h3>
+            <p>
+              Modeled the cleaned CSV in Power BI with “Sales Over Time”, hourly peak detection, and mix by
+              <code>SALETYPE</code>. Organized a simple, clean layout and delivered a short demo for the owner. :contentReference[oaicite:4]{index=4}
+            </p>
+            <div class="badges"><span class="badge">Power BI layout</span><span class="badge">slicers</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section" aria-labelledby="highlights">
+      <div class="container">
+        <h2 id="highlights">What changed <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>From daily noise to daily signal</h3>
+            <p>
+              The owner can open one dashboard each morning to see yesterday’s revenue, busiest hours, and sales mix—
+              and adjust staff and prep accordingly.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Questions → measurable levers</h3>
+            <p>
+              Peak-hour slots, typical basket size, and <code>SALETYPE</code> trends became trackable levers—supporting
+              pricing experiments and bundle tests.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Foundation for iteration</h3>
+            <p>
+              The pipeline + model are simple by design, making it easy to add inventory cost, loyalty, or promo effects
+              in the next iteration.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCOPE & CONSTRAINTS -->
+    <section class="section" aria-labelledby="scope">
+      <div class="container grid grid-2">
+        <article class="card">
+          <h3>Scope & assumptions</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--muted)">
+            <li>Use existing POS export (CSV) as source of truth.</li>
+            <li>Focus on sales dynamics, not full cost accounting (this is planned for v2).</li>
+            <li>Keep stack pragmatic: Excel → Python (Pandas) → Power BI.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Risks & mitigations</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--muted)">
+            <li>Data entry anomalies → cleaning rules + outlier flags.</li>
+            <li>Ambiguous <code>SALETYPE</code> → standardization + documentation.</li>
+            <li>Owner time → 5-minute dashboard walkthrough + handover notes.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="section" aria-labelledby="cta">
+      <div class="container">
+        <h2 id="cta">Want a version of this for your shop? <span class="bar"></span></h2>
+        <p class="section-lead">I can adapt this framework for restaurants, cafés, and other small retailers.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px">
+          <a class="btn btn--primary" href="mailto:gweshe21@gmail.com">Start a project</a>
+          <a class="btn btn--ghost" href="../blog.html">Back to Tapiwa’s Log</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+      <div>© 2025 Tapiwa Gweshe. All rights reserved.</div>
+      <div style="color:var(--muted)">I work in data. Christ works in me.</div>
+    </div>
+  </footer>
+
+  <!-- Shared animated background -->
+  <script src="../dynamic-bg.js" defer></script>
+</body>
+</html>

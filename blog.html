@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tapiwa’s Log | Blog</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Tapiwa’s Log — essays, build logs, poems, ideas, music, art, science, faith, and links to videos."/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar" role="banner">
+    <div class="container row">
+      <div class="brand">Tapiwa Gweshe</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#variance">Variance</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#cases">Case Studies</a>
+        <a href="index.html#stack">Stack</a>
+        <a aria-current="page" href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="blog-hero">
+      <div class="container">
+        <span class="tag"><span class="dot" aria-hidden="true"></span> Essays • Poetry • Think-pieces • Music • Art • Science • Faith • Video</span>
+        <h1 id="blog-hero">Tapiwa’s Log</h1>
+        <p class="section-lead">The file explorer of my mind and hands — what I’m building, learning, writing, and hearing.</p>
+
+        <!-- FILTERS -->
+        <div class="filterbar" id="filters" aria-label="Filters">
+          <span class="chip active" data-filter="all">All</span>
+          <span class="chip" data-filter="case-study">Case Studies</span>
+          <span class="chip" data-filter="essay">Essays</span>
+          <span class="chip" data-filter="poetry">Poetry</span>
+          <span class="chip" data-filter="think">Think-pieces</span>
+          <span class="chip" data-filter="music">Music</span>
+          <span class="chip" data-filter="art">Art</span>
+          <span class="chip" data-filter="science">Science</span>
+          <span class="chip" data-filter="faith">Faith</span>
+          <span class="chip" data-filter="video">Video</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTS GRID (3 live stories to start) -->
+    <section class="section" aria-label="Posts">
+      <div class="container">
+        <div class="grid grid-3" id="postGrid">
+
+          <!-- CleanR -->
+          <article class="card post" data-cat="case-study">
+            <h3>CleanR — Data Cleaning Engine</h3>
+            <p>AI-assisted rules + ML workflow that standardizes messy datasets and prevents drift.</p>
+            <div class="post-meta">
+              <span class="badge">Python</span>
+              <span class="badge">Rules + ML</span>
+              <span class="badge">QA</span>
+              <time datetime="2025-01-12">Jan 2025</time>
+            </div>
+            <div class="read">
+              <a class="btn btn--ghost" href="#" aria-disabled="true">Case study coming soon</a>
+            </div>
+          </article>
+
+          <!-- MyDaily -->
+          <article class="card post" data-cat="case-study">
+            <h3>MyDaily — Retail BI</h3>
+            <p>End-to-end BI stack for a café: profitability heatmaps, demand trends, daily ops insights.</p>
+            <div class="post-meta">
+              <span class="badge">Power BI</span>
+              <span class="badge">SQL</span>
+              <span class="badge">Ops enablement</span>
+              <time datetime="2024-11-03">Nov 2024</time>
+            </div>
+            <div class="read">
+              <a class="btn btn--ghost" href="posts/mydaily-retail-bi.html">Read case study</a>
+            </div>
+          </article>
+
+          <!-- MediView -->
+          <article class="card post" data-cat="case-study">
+            <h3>MediView — Imaging Toolkit</h3>
+            <p>Streamlined medical image review with clean interfaces and automated annotation helpers.</p>
+            <div class="post-meta">
+              <span class="badge">Python</span>
+              <span class="badge">OpenCV</span>
+              <span class="badge">Healthcare</span>
+              <time datetime="2024-10-01">Oct 2024</time>
+            </div>
+            <div class="read">
+              <a class="btn btn--ghost" href="#" aria-disabled="true">Case study coming soon</a>
+            </div>
+          </article>
+
+          <!-- Coming soon card -->
+          <article class="coming-soon post" data-cat="essay poetry think music art science faith video">
+            <h3>New content on the way.</h3>
+            
+            <div style="margin-top:12px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+              <a class="btn btn--primary" href="mailto:gweshe21@gmail.com">Get notified</a>
+              <a class="btn btn--ghost" href="index.html#contact">Work with me</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+      <div>© 2025 Tapiwa Gweshe. All rights reserved.</div>
+      <div style="color:var(--muted)">I work in data. Christ works in me.</div>
+    </div>
+  </footer>
+
+  <!-- Dynamic background + tiny filter logic -->
+  <script src="dynamic-bg.js" defer></script>
+  <script>
+    // Simple client-side filter (no framework)
+    document.getElementById('filters').addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip'); if(!chip) return;
+      const filter = chip.dataset.filter;
+      document.querySelectorAll('.chip').forEach(c => c.classList.toggle('active', c===chip));
+
+      const posts = document.querySelectorAll('#postGrid .post');
+      posts.forEach(p => {
+        if (filter === 'all') { p.style.display = ''; return; }
+        const match = (p.dataset.cat || '').split(' ').includes(filter);
+        p.style.display = match ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

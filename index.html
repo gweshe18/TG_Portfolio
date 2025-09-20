@@ -1,152 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tapiwa Gweshe - Data Scientist & Consultant</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tapiwa Gweshe — Data Scientist</title>
+  <meta name="description" content="Tapiwa Gweshe — Data Scientist. I turn data into decision systems: clean pipelines, trustworthy models, and dashboards leaders rely on."/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+<script src="dynamic-bg.js" defer></script>
+
 <body>
+<!-- Dynamic background canvas -->
+<div id="bg-canvas" aria-hidden="true"></div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <h1>Tapiwa Gweshe</h1>
-            <p class="subtitle">Data Scientist | Consultant | Educator</p>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#research">Research</a>
-                <a href="#projects">Projects</a>
-                <a href="#training">Training</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="container row">
+      <div class="brand">Tapiwa Gweshe</div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#variance">Variance</a>
+        <a href="#services">Services</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#stack">Stack</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>With a rare blend of technical expertise and visionary thinking, I bring a trailblazer approach to data science and consulting. My work is driven by a passion for solving complex challenges and creating data-driven solutions that make a tangible impact accross all industries. 
-                As the founder of Mvura Synapse Network, I lead projects with a focus on innovation, excellence, and client-centered results. My philosophy is simple: empower organizations to make informed decisions by translating raw data into actionable insights.</p>
-            <blockquote><i>"Data flows like water; Data Science makes it pure, clear, informative and accessible for everyone."</i></blockquote>
+  <main id="content">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <span class="tag"><span class="dot" aria-hidden="true"></span> Data Scientist • Systems Architect • Advisor</span>
+        <h1 id="hero-title">Hi, I’m Tapiwa Gweshe. Here’s the <em>variance</em> that matters.</h1>
+        <p>
+          The <strong>elephant</strong> sits in the room - a <em>blur</em> until someone pays attention. Most are busy with their own matters.
+          <strong>I have learnt to engage with it and learn its story.</strong>
+        </p>
+        <div style="margin-top:22px; display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn--primary" href="#contact" aria-label="Start a project with Tapiwa">Start a project</a>
+          <a class="btn btn--ghost" href="#cases">See case studies</a>
         </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Data Science & Statistical Analysis: <em>Python, R, SQL, SAS, Excel</em></li>
-                <li>Machine Learning & Predictive Modeling: <em>Scikit-Learn, TensorFlow</em></li>
-                <li>Data Visualization & Business Intelligence: <em>Power BI, Power Query, Excel</em></li>
-                <li>Data Engineering & ETL: <em>SQL, REDCap, ETL Pipelines</em></li>
-                <li>Communication & Leadership: <em>Proven ability to train and mentor teams in data-driven techniques</em></li>
-            </ul>
-        </div>
+    <!-- ANCHOR FOR 'WORK' IN NAV -->
+    <div id="work" class="section section--tight" style="padding-top:0;"></div>
+
+    <!-- PERSONAL TILES -->
+    <section class="section section--tight" aria-label="About in four words">
+      <div class="container stats">
+        <div class="stat"><div class="num">Disciple</div><div class="label">of Jesus Christ</div></div>
+        <div class="stat"><div class="num">Builder</div><div class="label">products • tools • systems</div></div>
+        <div class="stat"><div class="num">Teacher</div><div class="label">mentors analysts & teams</div></div>
+        <div class="stat"><div class="num">Writer</div><div class="label">essays • letters • notes</div></div>
+      </div>
     </section>
 
-    <!-- Research Section -->
-    <section id="research" class="section">
-        <div class="container">
-            <h2>Research</h2>
-            <div class="research-item">
-                <h3>POTPREV Study Findings</h3>
-                <p>In the POTPREV study, I conducted an in-depth analysis of predictors for nasal carriage, urinary tract infections, and bloodstream infections in hospitals across South Africa. Utilizing advanced statistical modeling in <strong>R Studio</strong> and data wrangling in <strong>Python</strong>, I uncovered associations between demographic factors such as age, gender, and HIV status with infection rates. This research has provided critical insights into seasonal disease patterns, supporting public health decision-making.</p>
-                <p>Tools: <strong>R, Python, Excel, Matplotlib, Plotly</strong></p>
-                <a href="potprev-details.html" class="button">Read Detailed Analysis</a>
+    <!-- VARIANCE (DIFFERENTIATORS) -->
+    <section id="variance" class="section" aria-labelledby="variance-title">
+      <div class="container">
+        <h2 id="variance-title">The Variance <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Clarity under pressure</h3>
+            <p>I translate ambiguity into crisp problem statements, measurable outcomes, and honest trade-offs leaders can act on.</p>
+            <div class="badges">
+              <span class="badge">problem framing</span>
+              <span class="badge">decision design</span>
             </div>
+          </article>
+
+          <article class="card">
+            <h3>End-to-end ownership</h3>
+            <p>Data engineering → modeling → validation → dashboards → handover. One accountable owner. No gaps.</p>
+            <div class="badges">
+              <span class="badge">ETL & QA</span>
+              <span class="badge">ML lifecycle</span>
+              <span class="badge">MLOps-lite</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Communication that moves</h3>
+            <p>Executives, clinicians, or engineers—each gets the right level of detail and the information that drives better decisions.</p>
+            <div class="badges">
+              <span class="badge">exec storytelling</span>
+              <span class="badge">change enablement</span>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            
-            <!-- X-ray De-Identification Tool -->
-            <div class="project">
-                <h3>X-ray De-Identification Tool</h3>
-                <p>Developed a proprietary X-ray de-identification tool to enhance patient privacy by removing identifiable information from DICOM files. This tool, used by leading medical research institutions, leverages <strong>Python (OpenCV and PIL)</strong> to isolate the X-ray image while excluding all sensitive text, ensuring compliance with healthcare privacy regulations.</p>
-                <a href="xray-details.html" class="button">Explore Project</a>
+    <!-- SERVICES -->
+    <section id="services" class="section" aria-labelledby="services-title">
+      <div class="container">
+        <h2 id="services-title">The Value <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Data Foundations</h3>
+            <p>Audit, clean, and structure your data. Build pipelines you can trust, with monitoring and QA baked in.</p>
+            <div class="badges">
+              <span class="badge">SQL · Python</span><span class="badge">Power Query</span><span class="badge">n8n</span>
             </div>
-            
-            <!-- PHRU Dashboards -->
-            <div class="project">
-                <h3>PHRU Clinical Dashboards</h3>
-                <p>Created a suite of clinical dashboards for the Perinatal HIV Research Unit, enhancing the research teams' ability to monitor real-time patient data and track study metrics effectively. By integrating <strong>Power BI</strong> and <strong>SQL</strong>, these dashboards provide actionable insights and support timely decision-making in clinical trials.</p>
-                <a href="dashboard-showcase.html" class="button">Watch Dashboard Demos</a>
+          </article>
+          <article class="card">
+            <h3>Models that perform</h3>
+            <p>From classical stats to ML: calibrated, monitored, and grounded in your business constraints.</p>
+            <div class="badges">
+              <span class="badge">scikit-learn</span><span class="badge">TensorFlow</span><span class="badge">SAS</span>
             </div>
-
-            <!-- Automotive Industry Data Analysis Tool -->
-            <div class="project">
-                <h3>Automotive Industry Data Analysis Tool - Klerksdorp</h3>
-                <p>Developed a custom data analysis tool for car dealerships in Klerksdorp to streamline the management of vehicle inventory, buying and selling processes, and operational efficiency. This tool provides insights into profit margins, sales trends, and dealership performance metrics, enabling dealership owners to make data-driven decisions that optimize resource allocation and maximize profitability.</p>
-                <p>The tool tracks sales volumes, revenue, and customer demographics, empowering dealerships to refine their inventory based on demand patterns and profitability analysis. The result is an increased efficiency in inventory management and a clearer understanding of market trends.</p>
-                <p>Tools: <strong>C#, Python, Excel, SQL, Pandas</strong></p>
-                <a href="automotive-tool-details.html" class="button">Explore Project</a>
+          </article>
+          <article class="card">
+            <h3>Decision Dashboards</h3>
+            <p>Power BI & lightweight web UIs that reveal signal, not noise—so teams move with confidence.</p>
+            <div class="badges">
+              <span class="badge">Power BI</span><span class="badge">Plotly</span><span class="badge">Streamlit</span>
             </div>
-
+          </article>
         </div>
+        <div style="margin-top:18px">
+          <a class="btn btn--accent" href="#contact">Book a discovery call</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Training Programs Section -->
-    <section id="training" class="section">
-        <div class="container">
-            <h2>Training Programs</h2>
-            
-            <div class="program">
-                <h3>Analyst Bootcamp</h3>
-                <p>Designed and led a 12-week training program focusing on Excel and Power BI for aspiring data analysts. The bootcamp includes a hands-on Excel project with XYZ Medical Group, where participants analyze patient flow, bed occupancy, and resource allocation, enhancing their skills in healthcare data analytics.</p>
-                <a href="analyst-bootcamp.html" class="button">View Course Details</a>
-            </div>
-            
-            <div class="program">
-                <h3>Power BI Study Guide</h3>
-                <p>Created a Power BI study guide that delves into ETL processes, data modeling, and DAX functions. This guide empowers learners to build powerful data visualizations and perform advanced analytics, transforming raw data into meaningful insights.</p>
-                <a href="powerbi-guide.html" class="button">Access Study Guide</a>
-            </div>
+    <!-- CASE STUDIES -->
+    <section id="cases" class="section" aria-labelledby="cases-title">
+      <div class="container">
+        <h2 id="cases-title">Selected Case Studies <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>CleanR — Data Cleaning Engine</h3>
+            <p>Designed an AI-assisted cleaning workflow that standardizes messy datasets and prevents drift.</p>
+            <div class="badges"><span class="badge">Python</span><span class="badge">Rules + ML</span><span class="badge">QA</span></div>
+          </article>
+
+          <article class="card">
+            <h3>MyDaily — Retail BI</h3>
+            <p>Built an end-to-end BI stack for a café: profitability heatmaps, demand trends, and daily ops insights.</p>
+            <div class="badges"><span class="badge">Power BI</span><span class="badge">SQL</span><span class="badge">Ops enablement</span></div>
+          </article>
+
+          <article class="card">
+            <h3>MediView — Imaging Toolkit</h3>
+            <p>Accelerated medical image review with clean interfaces and automated annotation helpers.</p>
+            <div class="badges"><span class="badge">Python</span><span class="badge">OpenCV</span><span class="badge">Healthcare</span></div>
+          </article>
         </div>
+        <div style="margin-top:18px">
+          <a class="btn btn--ghost" href="blog.html">Read build logs & articles</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Professional Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            
-            <div class="job">
-                <h3>Independent Consultant - PHRU</h3>
-                <p>At the Perinatal HIV Research Unit, I developed 5+ clinical dashboards, performed statistical analyses for research publications, and introduced digital data tracking systems. My contributions have supported critical research initiatives and improved operational efficiency in data management.</p>
-                <p>Tools Used: Power BI, REDCap, Python, Excel</p>
-            </div>
-
-            <div class="job">
-                <h3>Founder & CEO - Mvura Synapse Network</h3>
-                <p>As the founder of Mvura Synapse Network, I drive transformative data projects across sectors. I specialize in ETL processes, predictive modeling, and client-tailored data solutions that support strategic decision-making in healthcare, e-commerce, and beyond.</p>
-                <p>Tools Used: Power BI, SQL, Python, R</p>
-            </div>
+    <!-- STACK -->
+    <section id="stack" class="section" aria-labelledby="stack-title">
+      <div class="container">
+        <h2 id="stack-title">Working Stack <span class="bar"></span></h2>
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Languages</h3>
+            <p>Python, R, SQL, SAS, DAX, VBA (pragmatic where it counts)</p>
+          </article>
+          <article class="card">
+            <h3>Data & ML</h3>
+            <p>pandas, scikit-learn, TensorFlow/Keras, statsmodels, OpenCV, Power Query</p>
+          </article>
+          <article class="card">
+            <h3>Analytics & UI</h3>
+            <p>Power BI, Plotly, Streamlit, lightweight HTML/CSS for bespoke UIs</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:gweshet21@gmail.com">gweshet21@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/tapiwa-gweshe-78b4a7151/" target="_blank">Tapiwa Gweshe</a></p>
+    <!-- CONTACT -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Let’s build something that lasts <span class="bar"></span></h2>
+        <p class="section-lead">If you need someone who moves from problem to production with integrity and speed, <em>look no further.</em></p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px">
+          <a class="btn btn--primary" href="mailto:gweshe21@gmail.com">gweshe21@gmail.com</a>
+          <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://www.linkedin.com/in/tapiwa-gweshe-78b4a7151/">LinkedIn</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Tapiwa Gweshe - Mvura Synapse Network (PTY) Ltd</p>
-    </footer>
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+      <div>© 2025 Tapiwa Gweshe. All rights reserved.</div>
+      <div style="color:var(--muted)">I work in data. Christ works in me.</div>
+    </div>
+  </footer>
 
 </body>
 </html>
